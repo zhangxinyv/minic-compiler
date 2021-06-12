@@ -95,7 +95,7 @@ struct node* get_last_node(struct node *nd)
     }
     return tmpnode;
 }
-//给节点赋值,也就是给nd->val.str赋值
+//给节点赋值,也就是给nd->value.str赋值
 int set_node_val_str(struct node *nd, char *str)
 {
     if(nd==NULL || str==NULL){
@@ -199,8 +199,8 @@ char graph_name[10]={0};
 //    if (nd != NULL)
 //    {
 //        nd->gnode = agnode(*g, graph_name,1);
-//        agsafeset(nd->gnode, "label", nd->val.str, graph_name);
-//        // printf("%s\n", nd->val.str);
+//        agsafeset(nd->gnode, "label", nd->value.str, graph_name);
+//        // printf("%s\n", nd->value.str);
 //        // while(son!=NULL){
 //        //   PreOrder(son, g);
 //        //   son = son->next;
@@ -226,7 +226,7 @@ char graph_name[10]={0};
 //*/
 //void PreOrder_draw(struct node *nd,Agraph_t **g)
 //{
-//    // printf("%d %s\n",nd!=NULL,nd->val.str);
+//    // printf("%d %s\n",nd!=NULL,nd->value.str);
 //    // struct node *son;
 //    // son = nd->son;
 //    if ((nd) != NULL)
@@ -234,7 +234,7 @@ char graph_name[10]={0};
 //
 //        agedge(*g, nd->parent->gnode, nd->gnode, "", 1);
 //        // printf("%d", nd->parent != NULL);
-//        // printf("%s\n", nd->val.str);
+//        // printf("%s\n", nd->value.str);
 //        PreOrder_draw(nd->son, g);
 //        PreOrder_draw(nd->next,g);
 //    }

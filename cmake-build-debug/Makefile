@@ -303,6 +303,33 @@ table.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/table.c.s
 .PHONY : table.c.s
 
+util.obj: util.c.obj
+
+.PHONY : util.obj
+
+# target to build an object file
+util.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/util.c.obj
+.PHONY : util.c.obj
+
+util.i: util.c.i
+
+.PHONY : util.i
+
+# target to preprocess a source file
+util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/util.c.i
+.PHONY : util.c.i
+
+util.s: util.c.s
+
+.PHONY : util.s
+
+# target to generate assembly for a file
+util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/util.c.s
+.PHONY : util.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -330,6 +357,9 @@ help:
 	@echo ... table.obj
 	@echo ... table.i
 	@echo ... table.s
+	@echo ... util.obj
+	@echo ... util.i
+	@echo ... util.s
 .PHONY : help
 
 

@@ -107,6 +107,12 @@
 		<Unit filename="E:/a_temp/minic-compiler/table.h">
 			<Option target="minic"/>
 		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/util.c">
+			<Option target="minic"/>
+		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/util.h">
+			<Option target="minic"/>
+		</Unit>
 		<Unit filename="E:/a_temp/minic-compiler/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

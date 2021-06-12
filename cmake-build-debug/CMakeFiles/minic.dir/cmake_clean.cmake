@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/minic.dir/minic_lex.c.obj"
   "CMakeFiles/minic.dir/minic_yacc.c.obj"
   "CMakeFiles/minic.dir/table.c.obj"
+  "CMakeFiles/minic.dir/util.c.obj"
   "libminic.dll.a"
   "minic.exe"
   "minic.exe.manifest"

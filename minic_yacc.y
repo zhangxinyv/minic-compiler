@@ -15,11 +15,16 @@
 #include "ir.h"
 #include "table.h"
 #include "minic_lex.h"
+#include "util.h"
 extern int line_no;
 int yyerror(char*);
 int flag_var_def = 0;
 
 %}
+
+%code requires {
+#include "util.h"
+}
 %union
 {
 	struct
@@ -38,6 +43,13 @@ int flag_var_def = 0;
 			struct {int NO,DIM,PLACE;}_Elist;
 		}attr;
 		struct node *ast_node;
+
+
+		// for symbol table
+		varInfo var;
+		List var_list;
+		int type;
+
 	}all;
 	char str[20];
     char character;
@@ -131,26 +143,35 @@ CompUnit:
         $$.ast_node->type=decList;
         set_node_val_str($$.ast_node,"compUnit");
         add_son_node($$.ast_node,$1.ast_node);
-        add_son_node($$.ast_node,$2.ast_node);}
+        add_son_node($$.ast_node,$2.ast_node);
 
+        setScope("GLOBAL");
+        }
     | CompUnit FuncDef {
         new_node(&($$.ast_node));
         $$.ast_node->type=decList;
         set_node_val_str($$.ast_node,"compUnit");
         add_son_node($$.ast_node,$1.ast_node);
-        add_son_node($$.ast_node,$2.ast_node);}
+        add_son_node($$.ast_node,$2.ast_node);
 
+        setScope("GLOBAL");
+        }
     | Decl {
         new_node(&($$.ast_node));
         $$.ast_node->type=decList;
         set_node_val_str($$.ast_node,"compUnit");
-        add_son_node($$.ast_node,$1.ast_node);}
+        add_son_node($$.ast_node,$1.ast_node);
 
+        setScope("GLOBAL");
+        }
     | FuncDef {
         new_node(&($$.ast_node));
         $$.ast_node->type=decList;
         set_node_val_str($$.ast_node,"compUnit");
-        add_son_node($$.ast_node,$1.ast_node);}
+        add_son_node($$.ast_node,$1.ast_node);
+
+        setScope("GLOBAL");
+        }
     ;
 
 Decl:
@@ -168,14 +189,16 @@ BType:
         new_node(&($$.ast_node));
         $$.ast_node->type=sym;
         set_node_val_str($$.ast_node,"int");
-        //$$.var_type = "int";
-        //TODO
+
+        $$.type = TYPE_INT;
     }
     | INT '*'
     {
         new_node(&($$.ast_node));
         $$.ast_node->type=sym;
         set_node_val_str($$.ast_node,"int*");
+
+        $$.type = TYPE_INT_START;
     }
     ;
 
@@ -203,15 +226,9 @@ VarDecl:
         set_node_val_str($$.ast_node,"VarDecl");
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$2.ast_node);
-        /*$2.var_ids = [a, b, c, d]
-        $1.var_type = "int";
 
-        for id in $2.var_ids:
-            if $1.var_type == "int":
-                no = enter(id, 0);
-            else:
-                no = enter(id, 1);*/
-        //TODO
+        // for symbol table
+        registerVariables($1.type, $2.var_list);
     }
     ;
 
@@ -223,21 +240,18 @@ VarDefList:
         set_node_val_str($$.ast_node,"VarDefList");
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$3.ast_node);
-        //$3.var_id <-
-        //insert($1.var_ids, $3.var_id);
-        //copy($$, $1);
-        //TODO
+
+        // for symbol table
+        $$.var_list = appendList($1.var_list, $3.var);
     }
     | VarDef {
         new_node(&($$.ast_node));
         $$.ast_node->type = decList;
         set_node_val_str($$.ast_node,"VarDefList");
         add_son_node($$.ast_node,$1.ast_node);
-        // $$.var_ids: List;
-        //insert($$.var_ids, $1.var_id);
-        // $1.var_id <-
-        //TODO
 
+        // for symbol table
+        $$.var_list = appendList(NULL, $1.var);
         }
     ;
 
@@ -247,8 +261,8 @@ VarDef:
         $$.ast_node->type = dec;
         set_node_val_str($$.ast_node,"VarDef");
         add_son_node($$.ast_node,$1.ast_node);
-        //$$.var_id = $1.var_id;
-        //TODO
+        //entry($1.id_str);
+        $$.var = $1.var;
         }
 
     | Ident ConstSubscripts {
@@ -257,8 +271,10 @@ VarDef:
         set_node_val_str($$.ast_node,"VarDef");
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$2.ast_node);
-        //TODO
 
+        //entry($1.id_str);
+        $$.var = $1.var;
+        $$.var->isArray = 1;
     }
     ;
 
@@ -272,6 +288,9 @@ FuncDef:
         add_son_node($$.ast_node,$2.ast_node);
         add_son_node($$.ast_node,$4.ast_node);
         add_son_node($$.ast_node,$6.ast_node);
+
+        setScope($2.var->id);
+        registerFunc(TYPE_VOID, $2.var->id);
     }
     | VOID Ident '(' ')' Block {
         new_node(&($$.ast_node));
@@ -279,6 +298,9 @@ FuncDef:
         set_node_val_str($$.ast_node,"FuncDef");
         add_son_node($$.ast_node,$2.ast_node);
         add_son_node($$.ast_node,$5.ast_node);
+
+        setScope($2.var->id);
+        registerFunc(TYPE_VOID, $2.var->id);
     }
     | BType Ident '(' FuncFParams ')' Block {
         new_node(&($$.ast_node));
@@ -288,6 +310,9 @@ FuncDef:
         add_son_node($$.ast_node,$2.ast_node);
         add_son_node($$.ast_node,$4.ast_node);
         add_son_node($$.ast_node,$6.ast_node);
+
+        setScope($2.var->id);
+        registerFunc($1.type, $2.var->id);
     }
     | BType Ident '(' ')' Block {
         new_node(&($$.ast_node));
@@ -296,6 +321,9 @@ FuncDef:
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$2.ast_node);
         add_son_node($$.ast_node,$5.ast_node);
+
+        setScope($2.var->id);
+        registerFunc($1.type, $2.var->id);
     }
     ;
 
@@ -323,6 +351,8 @@ FuncFParam:
         set_node_val_str($$.ast_node,"FuncFParam");
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$2.ast_node);
+
+        registerVariable($1.type, $2.var->id, 0);
         }
     | BType Ident  ExpSubscripts {
         new_node(&($$.ast_node));
@@ -331,6 +361,8 @@ FuncFParam:
         add_son_node($$.ast_node,$1.ast_node);
         add_son_node($$.ast_node,$2.ast_node);
         add_son_node($$.ast_node,$3.ast_node);
+
+        registerVariable($1.type, $2.var->id, 1);
         }
     ;
 
@@ -792,8 +824,9 @@ Ident:
         new_node(&($$.ast_node));
         $$.ast_node->type = integer;
         set_node_val_str($$.ast_node,yytext);
-        //$$.var_id = $1;
-        //TODO
+        //entry(yytext);
+        //$$.id_str = String(yytext);
+        $$.var = VarInfo(String(yytext));
         }
     ;
 
@@ -805,5 +838,6 @@ int yyerror(char *errstr)
 	printf("\n%d: %s at %s\n\n",yylineno,errstr,yytext);
 	return 0;
 }
+
 
 

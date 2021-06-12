@@ -7,6 +7,7 @@ CMakeFiles/minic.dir/ast.c.obj: ../ast.h
 CMakeFiles/minic.dir/ir.c.obj: ../ir.c
 CMakeFiles/minic.dir/ir.c.obj: ../ir.h
 CMakeFiles/minic.dir/ir.c.obj: ../table.h
+CMakeFiles/minic.dir/ir.c.obj: ../util.h
 
 CMakeFiles/minic.dir/main.c.obj: ../ast.h
 CMakeFiles/minic.dir/main.c.obj: ../ir.h
@@ -14,18 +15,25 @@ CMakeFiles/minic.dir/main.c.obj: ../main.c
 CMakeFiles/minic.dir/main.c.obj: ../minic_lex.h
 CMakeFiles/minic.dir/main.c.obj: ../minic_yacc.h
 CMakeFiles/minic.dir/main.c.obj: ../table.h
+CMakeFiles/minic.dir/main.c.obj: ../util.h
 
 CMakeFiles/minic.dir/minic_lex.c.obj: ../minic_lex.c
 CMakeFiles/minic.dir/minic_lex.c.obj: ../minic_yacc.h
 CMakeFiles/minic.dir/minic_lex.c.obj: ../table.h
+CMakeFiles/minic.dir/minic_lex.c.obj: ../util.h
 
 CMakeFiles/minic.dir/minic_yacc.c.obj: ../ast.h
 CMakeFiles/minic.dir/minic_yacc.c.obj: ../ir.h
 CMakeFiles/minic.dir/minic_yacc.c.obj: ../minic_lex.h
 CMakeFiles/minic.dir/minic_yacc.c.obj: ../minic_yacc.c
 CMakeFiles/minic.dir/minic_yacc.c.obj: ../table.h
+CMakeFiles/minic.dir/minic_yacc.c.obj: ../util.h
 
 CMakeFiles/minic.dir/table.c.obj: ../minic_yacc.h
 CMakeFiles/minic.dir/table.c.obj: ../table.c
 CMakeFiles/minic.dir/table.c.obj: ../table.h
+CMakeFiles/minic.dir/table.c.obj: ../util.h
+
+CMakeFiles/minic.dir/util.c.obj: ../util.c
+CMakeFiles/minic.dir/util.c.obj: ../util.h
 

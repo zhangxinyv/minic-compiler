@@ -4,6 +4,19 @@
 #define TABLE_MAX_IDENT_NAME_LEN 50
 #define TABLE_MAX_VAR_NUM 200
 
+#include "util.h"
+
+#define TYPE_INT 0
+#define TYPE_INT_START 1
+#define TYPE_VOID 2
+
+void registerVariables(int type, List list);
+void registerVariable(int type, char *id, int isArray);
+void registerFunc(int type, char* id);
+
+extern char* SCOPE;
+void setScope(char* s);
+
 struct arr_info {
     int DIM;
     int *Vector; // 内情向量
@@ -15,7 +28,9 @@ typedef struct Node {
 typedef struct table_variable__ {
     char name[TABLE_MAX_IDENT_NAME_LEN]; // 变量名
     int type; // 类型
-    int isture; //是否为指针
+    int arrayType;
+    char* scope;
+    int isPtr; //是否为指针
     int isfunc; //是否为函数
     int addr; // 地址
     struct arr_info *ADDR;

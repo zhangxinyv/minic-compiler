@@ -57,7 +57,7 @@ void OutputVarList(void)
 {
     int i = 0;
 
-    printf(" No.\t name \t\t   type\n");
+    printf(" No.\tscope\t name \t\t   type\t\tisFunction\tisArray\n");
 
     if (i >= VarCount) {
         printf("Symbol Table is NULL!\n");
@@ -65,15 +65,24 @@ void OutputVarList(void)
     }
 
     for (i = 1; i < VarCount; i++) {
-        printf("%4d\t%6s\t\t", i, VarList[i].name);
-        if (VarList[i].type) {
-            printf(" REAL  \n");
-        } else {
-            printf(" INTEGER\n");
+        printf("%4d\t", i);
+        printf("%s\t", VarList[i].scope);
+        printf("%6s\t\t", VarList[i].name);
+        switch (VarList[i].type) {
+            case 0:
+                printf(" INTEGER");
+                break;
+            case 1:
+                printf(" INT*   ");
+                break;
+            case 2:
+                printf(" VOID   ");
         }
+        printf("\t%s", VarList[i].isfunc?"True": "    ");
+        printf("\t\t%s", VarList[i].arrayType?"True": "    ");
+        printf("\n");
     }
 
-    return;
 }
 
 
@@ -177,4 +186,30 @@ int Access_a(int no)
 int Access_d(int no, int k)
 {
     return VarList[no].ADDR->Vector[3 * k + 1];
+}
+
+void registerVariable(int type, char *id, int isArray) {
+    int var_no = enter(id);
+    VarList[var_no].type = type;
+    VarList[var_no].arrayType = isArray;
+
+}
+
+void registerVariables(int type, List list){
+    for (List iter = list; iter; iter = iter->next){
+        varInfo var = iter->value;
+        registerVariable(type, var->id, var->isArray);
+    }
+}
+void registerFunc(int type, char* id){
+    int no = enter(id);
+    VarList[no].isfunc = 1;
+    VarList[no].type = type;
+}
+
+int prePos = 0;
+void setScope(char* scope){
+    for(;prePos < VarCount; prePos++){
+        VarList[prePos].scope = scope;
+    }
 }

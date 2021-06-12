@@ -15,4 +15,4 @@ add_executable(minic
         minic_lex.h
         minic_yacc.c
         minic_yacc.h
-        )
+        util.c util.h)

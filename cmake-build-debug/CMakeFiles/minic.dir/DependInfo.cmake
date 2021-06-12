@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "E:/a_temp/minic-compiler/minic_lex.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/minic_lex.c.obj"
   "E:/a_temp/minic-compiler/minic_yacc.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/minic_yacc.c.obj"
   "E:/a_temp/minic-compiler/table.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/table.c.obj"
+  "E:/a_temp/minic-compiler/util.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/util.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
