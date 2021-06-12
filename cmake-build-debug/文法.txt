@@ -1,0 +1,76 @@
+program -> CompUnit
+
+CompUnit -> CompUnit Decl | CompUnit FuncDef | Decl | FuncDef
+
+Decl -> VarDecl
+
+BType -> INT | INT '*'
+
+ConstSubscripts -> ConstSubscripts '[' ConstExp ']' | '[' ConstExp ']'
+
+VarDecl -> BType VarDefList ';'
+
+VarDefList -> VarDefList ',' VarDef | VarDef
+
+VarDef -> Ident | Ident ConstSubscripts
+
+FuncDef -> VOID Ident '(' FuncFParams ')' Block
+            | VOID Ident '(' ')' Block
+            | BType Ident '(' FuncFParams ')' Block
+            | BType Ident '(' ')' Block
+
+FuncFParams -> FuncFParams ',' FuncFParam | FuncFParam
+
+FuncFParam -> BType Ident | BType Ident ExpSubscripts
+
+ExpSubscripts -> ExpSubscripts '[' Exp ']' | '[' ']' | '[' Exp ']'
+
+Block -> '{' BlockItem '}' | '{' '}'
+
+BlockItem -> BlockItem Decl | BlockItem Stmt | Decl | Stmt
+
+Stmt -> LVal '=' Exp ',' | Exp ';' | ';' | Block | IF '(' Cond ')' Stmt
+        | IF '(' Cond ')' Stmt ELSE Stmt | WHILE '(' Cond ')' Stmt | BREAK
+        | CONTINUE | RETURN Exp | RETURN
+
+FuncRParams -> FuncRParams ',' Exp | Exp
+
+LVal -> Ident | LVal '[' Exp ']'
+
+Cond -> LOrExp
+
+LOrExp -> LAndExp | LOrExp OR LAndExp
+
+LAndExp -> EqExp | LAndExp AND EqExp
+
+EqExp -> RelExp | EqExp EqOp RelExp
+
+RelExp -> AddExp | RelExp RelOp AddExp
+
+RelOp -> '<' | LE | '>' | GE
+
+EqOp -> EQ | NE
+
+addOp -> '+' | '-'
+
+mulOp -> '*' | '/' | '%'
+
+UnaryOp -> '+' | '-' | '!'
+
+SelfOp -> SELFPULS | SELPMINUS
+
+Exp -> AddExp
+
+AddExp -> MulExp | AddExp addOp MulExp | Ident SelfOp | SelfOp Ident
+
+MulExp -> UnaryExp | MulExp mulOp UnaryExp
+
+UnaryExp -> PrimaryExp | Ident '(' FuncRParams ')' | Ident '(' ')' | UnaryOp UnaryExp
+
+PrimaryExp -> '(' Exp ')' | LVal | Number | STRING
+
+ConstExp -> AddExp
+
+Number -> INTEGER
+
+Ident -> ID
