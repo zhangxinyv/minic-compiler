@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
     // 输出抽象语法树
     // TODO 实现通过Graphviz输出抽象语法树
-    DrawTree();
+//    DrawTree();
 
     return 0;
 }

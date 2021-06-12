@@ -52,19 +52,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\cprogram\minic
+CMAKE_SOURCE_DIR = E:\a_temp\minic-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\cprogram\minic\cmake-build-debug
+CMAKE_BINARY_DIR = E:\a_temp\minic-compiler\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/minic.dir/depend.make
@@ -77,62 +77,90 @@ include CMakeFiles/minic.dir/flags.make
 
 CMakeFiles/minic.dir/main.c.obj: CMakeFiles/minic.dir/flags.make
 CMakeFiles/minic.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\cprogram\minic\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/minic.dir/main.c.obj"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\main.c.obj -c E:\cprogram\minic\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/minic.dir/main.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\main.c.obj -c E:\a_temp\minic-compiler\main.c
 
 CMakeFiles/minic.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/main.c.i"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\cprogram\minic\main.c > CMakeFiles\minic.dir\main.c.i
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\main.c > CMakeFiles\minic.dir\main.c.i
 
 CMakeFiles/minic.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/main.c.s"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\cprogram\minic\main.c -o CMakeFiles\minic.dir\main.c.s
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\main.c -o CMakeFiles\minic.dir\main.c.s
 
 CMakeFiles/minic.dir/ast.c.obj: CMakeFiles/minic.dir/flags.make
 CMakeFiles/minic.dir/ast.c.obj: ../ast.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\cprogram\minic\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/minic.dir/ast.c.obj"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\ast.c.obj -c E:\cprogram\minic\ast.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/minic.dir/ast.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\ast.c.obj -c E:\a_temp\minic-compiler\ast.c
 
 CMakeFiles/minic.dir/ast.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/ast.c.i"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\cprogram\minic\ast.c > CMakeFiles\minic.dir\ast.c.i
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\ast.c > CMakeFiles\minic.dir\ast.c.i
 
 CMakeFiles/minic.dir/ast.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/ast.c.s"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\cprogram\minic\ast.c -o CMakeFiles\minic.dir\ast.c.s
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\ast.c -o CMakeFiles\minic.dir\ast.c.s
 
 CMakeFiles/minic.dir/ir.c.obj: CMakeFiles/minic.dir/flags.make
 CMakeFiles/minic.dir/ir.c.obj: ../ir.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\cprogram\minic\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/minic.dir/ir.c.obj"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\ir.c.obj -c E:\cprogram\minic\ir.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/minic.dir/ir.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\ir.c.obj -c E:\a_temp\minic-compiler\ir.c
 
 CMakeFiles/minic.dir/ir.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/ir.c.i"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\cprogram\minic\ir.c > CMakeFiles\minic.dir\ir.c.i
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\ir.c > CMakeFiles\minic.dir\ir.c.i
 
 CMakeFiles/minic.dir/ir.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/ir.c.s"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\cprogram\minic\ir.c -o CMakeFiles\minic.dir\ir.c.s
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\ir.c -o CMakeFiles\minic.dir\ir.c.s
 
 CMakeFiles/minic.dir/table.c.obj: CMakeFiles/minic.dir/flags.make
 CMakeFiles/minic.dir/table.c.obj: ../table.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\cprogram\minic\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/minic.dir/table.c.obj"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\table.c.obj -c E:\cprogram\minic\table.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/minic.dir/table.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\table.c.obj -c E:\a_temp\minic-compiler\table.c
 
 CMakeFiles/minic.dir/table.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/table.c.i"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\cprogram\minic\table.c > CMakeFiles\minic.dir\table.c.i
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\table.c > CMakeFiles\minic.dir\table.c.i
 
 CMakeFiles/minic.dir/table.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/table.c.s"
-	"D:\Program Files\mingw64\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\cprogram\minic\table.c -o CMakeFiles\minic.dir\table.c.s
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\table.c -o CMakeFiles\minic.dir\table.c.s
+
+CMakeFiles/minic.dir/minic_lex.c.obj: CMakeFiles/minic.dir/flags.make
+CMakeFiles/minic.dir/minic_lex.c.obj: ../minic_lex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/minic.dir/minic_lex.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\minic_lex.c.obj -c E:\a_temp\minic-compiler\minic_lex.c
+
+CMakeFiles/minic.dir/minic_lex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/minic_lex.c.i"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\minic_lex.c > CMakeFiles\minic.dir\minic_lex.c.i
+
+CMakeFiles/minic.dir/minic_lex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/minic_lex.c.s"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\minic_lex.c -o CMakeFiles\minic.dir\minic_lex.c.s
+
+CMakeFiles/minic.dir/minic_yacc.c.obj: CMakeFiles/minic.dir/flags.make
+CMakeFiles/minic.dir/minic_yacc.c.obj: ../minic_yacc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/minic.dir/minic_yacc.c.obj"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\minic.dir\minic_yacc.c.obj -c E:\a_temp\minic-compiler\minic_yacc.c
+
+CMakeFiles/minic.dir/minic_yacc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/minic.dir/minic_yacc.c.i"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\a_temp\minic-compiler\minic_yacc.c > CMakeFiles\minic.dir\minic_yacc.c.i
+
+CMakeFiles/minic.dir/minic_yacc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/minic.dir/minic_yacc.c.s"
+	D:\MinGW-w64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\a_temp\minic-compiler\minic_yacc.c -o CMakeFiles\minic.dir\minic_yacc.c.s
 
 # Object files for target minic
 minic_OBJECTS = \
 "CMakeFiles/minic.dir/main.c.obj" \
 "CMakeFiles/minic.dir/ast.c.obj" \
 "CMakeFiles/minic.dir/ir.c.obj" \
-"CMakeFiles/minic.dir/table.c.obj"
+"CMakeFiles/minic.dir/table.c.obj" \
+"CMakeFiles/minic.dir/minic_lex.c.obj" \
+"CMakeFiles/minic.dir/minic_yacc.c.obj"
 
 # External object files for target minic
 minic_EXTERNAL_OBJECTS =
@@ -141,11 +169,13 @@ minic.exe: CMakeFiles/minic.dir/main.c.obj
 minic.exe: CMakeFiles/minic.dir/ast.c.obj
 minic.exe: CMakeFiles/minic.dir/ir.c.obj
 minic.exe: CMakeFiles/minic.dir/table.c.obj
+minic.exe: CMakeFiles/minic.dir/minic_lex.c.obj
+minic.exe: CMakeFiles/minic.dir/minic_yacc.c.obj
 minic.exe: CMakeFiles/minic.dir/build.make
 minic.exe: CMakeFiles/minic.dir/linklibs.rsp
 minic.exe: CMakeFiles/minic.dir/objects1.rsp
 minic.exe: CMakeFiles/minic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\cprogram\minic\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable minic.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable minic.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\minic.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +188,6 @@ CMakeFiles/minic.dir/clean:
 .PHONY : CMakeFiles/minic.dir/clean
 
 CMakeFiles/minic.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\cprogram\minic E:\cprogram\minic E:\cprogram\minic\cmake-build-debug E:\cprogram\minic\cmake-build-debug E:\cprogram\minic\cmake-build-debug\CMakeFiles\minic.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\a_temp\minic-compiler E:\a_temp\minic-compiler E:\a_temp\minic-compiler\cmake-build-debug E:\a_temp\minic-compiler\cmake-build-debug E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles\minic.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/minic.dir/depend
 

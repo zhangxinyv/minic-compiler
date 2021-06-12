@@ -452,7 +452,7 @@ Stmt:
         $$.ast_node->type = stm;
         set_node_val_str($$.ast_node,"WHILE_Statement");
         struct ndoe *tmpnode = NULL;
-        set_node_val_str(tmpnode1,"while");
+    set_node_val_str(tmpnode,"while");
         add_son_node($$.ast_node,tmpnode);
         add_son_node($$.ast_node,$3.ast_node);
         add_son_node($$.ast_node,$5.ast_node);

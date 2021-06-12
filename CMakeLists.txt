@@ -3,4 +3,16 @@ project(minic C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(minic main.c ast.h ir.h table.h ast.c ir.c table.c)
+add_executable(minic
+        main.c
+        ast.c
+        ast.h
+        ir.h
+        ir.c
+        table.h
+        table.c
+        minic_lex.c
+        minic_lex.h
+        minic_yacc.c
+        minic_yacc.h
+        )

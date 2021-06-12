@@ -4,10 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/cprogram/minic/ast.c" "E:/cprogram/minic/cmake-build-debug/CMakeFiles/minic.dir/ast.c.obj"
-  "E:/cprogram/minic/ir.c" "E:/cprogram/minic/cmake-build-debug/CMakeFiles/minic.dir/ir.c.obj"
-  "E:/cprogram/minic/main.c" "E:/cprogram/minic/cmake-build-debug/CMakeFiles/minic.dir/main.c.obj"
-  "E:/cprogram/minic/table.c" "E:/cprogram/minic/cmake-build-debug/CMakeFiles/minic.dir/table.c.obj"
+  "E:/a_temp/minic-compiler/ast.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/ast.c.obj"
+  "E:/a_temp/minic-compiler/ir.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/ir.c.obj"
+  "E:/a_temp/minic-compiler/main.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/main.c.obj"
+  "E:/a_temp/minic-compiler/minic_lex.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/minic_lex.c.obj"
+  "E:/a_temp/minic-compiler/minic_yacc.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/minic_yacc.c.obj"
+  "E:/a_temp/minic-compiler/table.c" "E:/a_temp/minic-compiler/cmake-build-debug/CMakeFiles/minic.dir/table.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

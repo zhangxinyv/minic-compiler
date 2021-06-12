@@ -8,94 +8,106 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="E:/cprogram/minic/cmake-build-debug"/>
+				<Option working_dir="E:/a_temp/minic-compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="minic">
-				<Option output="E:/cprogram/minic/cmake-build-debug/minic.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/cprogram/minic/cmake-build-debug"/>
+				<Option output="E:/a_temp/minic-compiler/cmake-build-debug/minic.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/a_temp/minic-compiler/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 minic"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 minic"/>
+					<CompileFile command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="minic/fast">
-				<Option output="E:/cprogram/minic/cmake-build-debug/minic.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/cprogram/minic/cmake-build-debug"/>
+				<Option output="E:/a_temp/minic-compiler/cmake-build-debug/minic.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/a_temp/minic-compiler/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/Program Files/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\mingw-w64\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 minic/fast"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 minic/fast"/>
+					<CompileFile command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="E:/cprogram/minic/cmake-build-debug"/>
+				<Option working_dir="E:/a_temp/minic-compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="E:/cprogram/minic/cmake-build-debug"/>
+				<Option working_dir="E:/a_temp/minic-compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/cprogram/minic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MinGW-w64/bin/mingw32-make.exe -f &quot;E:/a_temp/minic-compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/cprogram/minic/ast.c">
+		<Unit filename="E:/a_temp/minic-compiler/ast.c">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/ast.h">
+		<Unit filename="E:/a_temp/minic-compiler/ast.h">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/ir.c">
+		<Unit filename="E:/a_temp/minic-compiler/ir.c">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/ir.h">
+		<Unit filename="E:/a_temp/minic-compiler/ir.h">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/main.c">
+		<Unit filename="E:/a_temp/minic-compiler/main.c">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/table.c">
+		<Unit filename="E:/a_temp/minic-compiler/minic_lex.c">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/table.h">
+		<Unit filename="E:/a_temp/minic-compiler/minic_lex.h">
 			<Option target="minic"/>
 		</Unit>
-		<Unit filename="E:/cprogram/minic/CMakeLists.txt">
+		<Unit filename="E:/a_temp/minic-compiler/minic_yacc.c">
+			<Option target="minic"/>
+		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/minic_yacc.h">
+			<Option target="minic"/>
+		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/table.c">
+			<Option target="minic"/>
+		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/table.h">
+			<Option target="minic"/>
+		</Unit>
+		<Unit filename="E:/a_temp/minic-compiler/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

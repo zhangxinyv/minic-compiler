@@ -5,7 +5,7 @@
 #define RET_SUCCESS		0
 #define RET_ERROR		-1
 
-#include <gvc.h>
+//#include <gvc.h>
 
 enum node_type
 {
@@ -30,7 +30,7 @@ struct node
     struct node *next;/*记录本节点的下一个兄弟节点。
 	                   本节点的parent节点的son_list
 	                   指向整个兄弟链的第一个元素。*/
-    Agnode_t *gnode;
+//    Agnode_t *gnode;
 };
 
 int init_node(struct node *nd);

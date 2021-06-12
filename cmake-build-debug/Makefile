@@ -57,19 +57,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\cprogram\minic
+CMAKE_SOURCE_DIR = E:\a_temp\minic-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\cprogram\minic\cmake-build-debug
+CMAKE_BINARY_DIR = E:\a_temp\minic-compiler\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,7 +77,7 @@ CMAKE_BINARY_DIR = E:\cprogram\minic\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	D:\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -98,9 +98,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\cprogram\minic\cmake-build-debug\CMakeFiles E:\cprogram\minic\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles E:\a_temp\minic-compiler\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\cprogram\minic\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\a_temp\minic-compiler\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -222,6 +222,60 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/main.c.s
 .PHONY : main.c.s
 
+minic_lex.obj: minic_lex.c.obj
+
+.PHONY : minic_lex.obj
+
+# target to build an object file
+minic_lex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_lex.c.obj
+.PHONY : minic_lex.c.obj
+
+minic_lex.i: minic_lex.c.i
+
+.PHONY : minic_lex.i
+
+# target to preprocess a source file
+minic_lex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_lex.c.i
+.PHONY : minic_lex.c.i
+
+minic_lex.s: minic_lex.c.s
+
+.PHONY : minic_lex.s
+
+# target to generate assembly for a file
+minic_lex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_lex.c.s
+.PHONY : minic_lex.c.s
+
+minic_yacc.obj: minic_yacc.c.obj
+
+.PHONY : minic_yacc.obj
+
+# target to build an object file
+minic_yacc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_yacc.c.obj
+.PHONY : minic_yacc.c.obj
+
+minic_yacc.i: minic_yacc.c.i
+
+.PHONY : minic_yacc.i
+
+# target to preprocess a source file
+minic_yacc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_yacc.c.i
+.PHONY : minic_yacc.c.i
+
+minic_yacc.s: minic_yacc.c.s
+
+.PHONY : minic_yacc.s
+
+# target to generate assembly for a file
+minic_yacc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\minic.dir\build.make CMakeFiles/minic.dir/minic_yacc.c.s
+.PHONY : minic_yacc.c.s
+
 table.obj: table.c.obj
 
 .PHONY : table.obj
@@ -267,6 +321,12 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... minic_lex.obj
+	@echo ... minic_lex.i
+	@echo ... minic_lex.s
+	@echo ... minic_yacc.obj
+	@echo ... minic_yacc.i
+	@echo ... minic_yacc.s
 	@echo ... table.obj
 	@echo ... table.i
 	@echo ... table.s

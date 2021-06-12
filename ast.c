@@ -20,7 +20,7 @@ int init_node(struct node *nd)
     nd->son = NULL;
     nd->parent = NULL;
     nd->next = NULL;
-    nd->gnode = NULL;
+//    nd->gnode = NULL;
 
     return RET_SUCCESS;
 }
@@ -152,7 +152,7 @@ struct ast
     struct node *son;
     struct node *parent;
     struct node *next;
-    Agnode_t *gnode;
+//    Agnode_t *gnode;
 };
 
 /*
@@ -190,72 +190,72 @@ char graph_name[10]={0};
  * 给父亲节点赋值
 */
 
-void PreOrder(struct node *nd, Agraph_t **g)
-{
-    // struct node *son;
-    // son = nd->son;
-    graph_number++;
-    Int2Str(graph_name,graph_number);
-    if (nd != NULL)
-    {
-        nd->gnode = agnode(*g, graph_name,1);
-        agsafeset(nd->gnode, "label", nd->val.str, graph_name);
-        // printf("%s\n", nd->val.str);
-        // while(son!=NULL){
-        //   PreOrder(son, g);
-        //   son = son->next;
-        // }
-        PreOrder(nd->son, g);
-        struct node *temp;
-        temp = nd->next;
-        while (temp!=NULL)
-        {
-            if(temp->parent==NULL){
-                temp->parent = nd->parent;
-            }
-            // temp->gnode = agnode(*g, (char*)temp, 0);
-            temp = temp->next;
-        }
-        PreOrder(nd->next, g);
-    }
-}
-
-/*
- * 先序遍历
- * 画线
-*/
-void PreOrder_draw(struct node *nd,Agraph_t **g)
-{
-    // printf("%d %s\n",nd!=NULL,nd->val.str);
-    // struct node *son;
-    // son = nd->son;
-    if ((nd) != NULL)
-    {
-
-        agedge(*g, nd->parent->gnode, nd->gnode, "", 1);
-        // printf("%d", nd->parent != NULL);
-        // printf("%s\n", nd->val.str);
-        PreOrder_draw(nd->son, g);
-        PreOrder_draw(nd->next,g);
-    }
-}
-
-
-/*
- * 输出抽象语法树
-*/
-void DrawTree()
-{
-    Agraph_t *g;
-    g = agopen("AST", Agstrictdirected, 0);
-    PreOrder(&ast_root, &g);
-    // printf("preorder ok\n");
-    PreOrder_draw(ast_root.son, &g);
-    GVC_t *gv;
-    gv = gvContext();
-    gvLayout(gv, g, "dot");
-    gvRenderFilename(gv, g, "png", " test.png");
-    gvFreeLayout(gv, g);
-    agclose(g);
-    gvFreeContext(gv);
-}
+//void PreOrder(struct node *nd, Agraph_t **g)
+//{
+//    // struct node *son;
+//    // son = nd->son;
+//    graph_number++;
+//    Int2Str(graph_name,graph_number);
+//    if (nd != NULL)
+//    {
+//        nd->gnode = agnode(*g, graph_name,1);
+//        agsafeset(nd->gnode, "label", nd->val.str, graph_name);
+//        // printf("%s\n", nd->val.str);
+//        // while(son!=NULL){
+//        //   PreOrder(son, g);
+//        //   son = son->next;
+//        // }
+//        PreOrder(nd->son, g);
+//        struct node *temp;
+//        temp = nd->next;
+//        while (temp!=NULL)
+//        {
+//            if(temp->parent==NULL){
+//                temp->parent = nd->parent;
+//            }
+//            // temp->gnode = agnode(*g, (char*)temp, 0);
+//            temp = temp->next;
+//        }
+//        PreOrder(nd->next, g);
+//    }
+//}
+//
+///*
+// * 先序遍历
+// * 画线
+//*/
+//void PreOrder_draw(struct node *nd,Agraph_t **g)
+//{
+//    // printf("%d %s\n",nd!=NULL,nd->val.str);
+//    // struct node *son;
+//    // son = nd->son;
+//    if ((nd) != NULL)
+//    {
+//
+//        agedge(*g, nd->parent->gnode, nd->gnode, "", 1);
+//        // printf("%d", nd->parent != NULL);
+//        // printf("%s\n", nd->val.str);
+//        PreOrder_draw(nd->son, g);
+//        PreOrder_draw(nd->next,g);
+//    }
+//}
+//
+//
+///*
+// * 输出抽象语法树
+//*/
+//void DrawTree()
+//{
+//    Agraph_t *g;
+//    g = agopen("AST", Agstrictdirected, 0);
+//    PreOrder(&ast_root, &g);
+//    // printf("preorder ok\n");
+//    PreOrder_draw(ast_root.son, &g);
+//    GVC_t *gv;
+//    gv = gvContext();
+//    gvLayout(gv, g, "dot");
+//    gvRenderFilename(gv, g, "png", " test.png");
+//    gvFreeLayout(gv, g);
+//    agclose(g);
+//    gvFreeContext(gv);
+//}
